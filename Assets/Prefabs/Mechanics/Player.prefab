@@ -39,6 +39,9 @@ GameObject:
   - component: {fileID: 65586462899778882}
   - component: {fileID: 54484053859671704}
   - component: {fileID: 114325654222945372}
+  - component: {fileID: 114735754932423992}
+  - component: {fileID: 114360864609693860}
+  - component: {fileID: 114841438877802720}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -119,7 +122,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841434872493160}
   serializedVersion: 2
-  m_Mass: 50
+  m_Mass: 150
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -150,4 +153,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866db12f87cf7454680300c145dc49ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldown: 0
+--- !u!114 &114360864609693860
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841434872493160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e5492b60cbd8143af44746c2d7b4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ScaleTarget: 1
+  m_ScaleTime: 2
+--- !u!114 &114735754932423992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841434872493160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3efcefe6df2722b4e908dacf885a74bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_JumpForce: 20
+--- !u!114 &114841438877802720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841434872493160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dcff69f73611b54ba1f02d35090fe53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpTrajectory:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 5.5805006
+      outSlope: 5.5805006
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.2143153
+      value: 0.9883057
+      inSlope: -0.0030589185
+      outSlope: -0.0030589185
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.7276896
+      value: 0.9848112
+      inSlope: -0.14457503
+      outSlope: -0.14457503
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.9968872
+      value: 0.0077819824
+      inSlope: -2.0274355
+      outSlope: -2.0274355
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  m_JumpTime: 0.4
+  m_JumpScale: 4
