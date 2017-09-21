@@ -22,7 +22,6 @@ public class Spawner : MonoBehaviour {
 
     IEnumerator Instantiator ( float delay)
     {
-        if()
         Instantiate(ObstacleCollection[Random.Range(0, ObstacleCollection.Length)], spawnPoint);
 
         yield return new WaitForSeconds(delay);

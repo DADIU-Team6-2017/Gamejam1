@@ -29,7 +29,7 @@ public class ObstacleMove : MonoBehaviour {
 		Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
 
 		if (screenPoint.x < 0+threshold) {
-			transform.position = new Vector3 (0, 0, 0);
+            Destroy(this.gameObject);
 		}
 	}
 
