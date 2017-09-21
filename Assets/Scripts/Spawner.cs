@@ -8,6 +8,7 @@ public class Spawner : MonoBehaviour {
     public Transform spawnPoint;
     public Transform endPoint;
     public Random rnd;
+	public float obstacleSpeed;
     public float delay;
     public bool IsSpawning;
 
@@ -16,6 +17,7 @@ public class Spawner : MonoBehaviour {
         spawnPoint = GameObject.Find("StartPoint").transform;
         endPoint = GameObject.Find("EndPoint").transform;
         IsSpawning = true;
+		SetObstacleSpeed ();
         StartCoroutine(Instantiator(delay));
     }
 	
@@ -29,4 +31,10 @@ public class Spawner : MonoBehaviour {
             StartCoroutine(Instantiator(delay));
 
     }
+
+	void SetObstacleSpeed(){
+		foreach(GameObject obj in ObstacleCollection){
+			obj.GetComponent<ObstacleMove> ().speed = obstacleSpeed;
+		}
+	}
 }
