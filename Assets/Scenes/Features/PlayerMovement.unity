@@ -216,79 +216,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1237958985 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1841434872493160, guid: f493f41168078124db362ffa5aa5016e,
+--- !u!114 &1237958990 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114360864609693860, guid: f493f41168078124db362ffa5aa5016e,
     type: 2}
   m_PrefabInternal: {fileID: 2015060520}
---- !u!114 &1237958989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1237958985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3efcefe6df2722b4e908dacf885a74bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 20
---- !u!114 &1237958990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1237958985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2e5492b60cbd8143af44746c2d7b4c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ScaleTarget: 1
-  m_ScaleTime: 2
---- !u!114 &1237958991
+--- !u!114 &1237958991 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1237958985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
+  m_PrefabParentObject: {fileID: 114841438877802720, guid: f493f41168078124db362ffa5aa5016e,
+    type: 2}
+  m_PrefabInternal: {fileID: 2015060520}
   m_Script: {fileID: 11500000, guid: 6dcff69f73611b54ba1f02d35090fe53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpTrajectory:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 5.5805006
-      outSlope: 5.5805006
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.2143153
-      value: 0.9883057
-      inSlope: -0.0030589185
-      outSlope: -0.0030589185
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.7276896
-      value: 0.9848112
-      inSlope: -0.14457503
-      outSlope: -0.14457503
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.9968872
-      value: 0.0077819824
-      inSlope: -2.0274355
-      outSlope: -2.0274355
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 0
-  m_JumpTime: 0.4
-  m_JumpScale: 4
 --- !u!1001 &1723174777
 Prefab:
   m_ObjectHideFlags: 0
@@ -647,11 +586,6 @@ Prefab:
     - target: {fileID: 4878156818222654, guid: f493f41168078124db362ffa5aa5016e, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 54484053859671704, guid: f493f41168078124db362ffa5aa5016e,
-        type: 2}
-      propertyPath: m_Mass
-      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f493f41168078124db362ffa5aa5016e, type: 2}
