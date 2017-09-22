@@ -14,12 +14,14 @@ public class PlayerJumpCurve : MonoBehaviour
     [SerializeField]
     float m_JumpScale = 1f;
 
+    [SerializeField]
+    string m_ActionCollisionLayer;
+
     PlayerMovement m_PlayerMovement;
 
     public void OnEnable()
     {
         m_PlayerMovement = GetComponent<PlayerMovement>();
-
     }
 
     public void Jump()
@@ -30,6 +32,8 @@ public class PlayerJumpCurve : MonoBehaviour
         }
 
         m_PlayerMovement.cooldown = true;
+
+        gameObject.layer = LayerMask.NameToLayer(m_ActionCollisionLayer);
 
         StartCoroutine(JumpFollowCurve());
     }
@@ -55,6 +59,9 @@ public class PlayerJumpCurve : MonoBehaviour
         }
 
         transform.position = position;
+
+        m_PlayerMovement.RestoreLayerMask();
+
         m_PlayerMovement.cooldown = false;
 
         yield return null;

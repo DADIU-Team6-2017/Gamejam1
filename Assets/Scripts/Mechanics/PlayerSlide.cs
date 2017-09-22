@@ -13,6 +13,9 @@ public class PlayerSlide : MonoBehaviour
     [SerializeField]
     float m_ScaleTime;
 
+    [SerializeField]
+    string m_ActionCollisionLayer;
+
     Vector3 m_DefaultScale;
 
     void OnEnable()
@@ -30,6 +33,8 @@ public class PlayerSlide : MonoBehaviour
 
         m_PlayerMovement.cooldown = true;
 
+        gameObject.layer = LayerMask.NameToLayer(m_ActionCollisionLayer);
+
         transform.localScale = new Vector3(m_DefaultScale.x, m_ScaleTarget, m_DefaultScale.z);
 
         StartCoroutine(ScaleTimeout());
@@ -40,6 +45,9 @@ public class PlayerSlide : MonoBehaviour
         yield return new WaitForSeconds(m_ScaleTime);
 
         transform.localScale = m_DefaultScale;
+
+        m_PlayerMovement.RestoreLayerMask();
+
         m_PlayerMovement.cooldown = false;
 
         yield return null;
