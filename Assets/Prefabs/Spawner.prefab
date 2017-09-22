@@ -214,5 +214,6 @@ MonoBehaviour:
   - {fileID: 1473844282435216, guid: 914632205c29a8847b19709dc8bd6cda, type: 2}
   spawnPoint: {fileID: 0}
   obstacleSpeed: 12
-  bpm: 120
+  bpm: 122
   isSpawning: 0
+  fourBarSurvive: 32
