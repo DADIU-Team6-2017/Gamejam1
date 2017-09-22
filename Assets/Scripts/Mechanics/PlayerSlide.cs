@@ -44,6 +44,8 @@ public class PlayerSlide : MonoBehaviour
 
         transform.localScale = new Vector3(m_DefaultScale.x, m_ScaleTarget, m_DefaultScale.z);
 
+        m_PlayerMovement.TriggerAnimation(PlayerMovement.AnimationConditions.ducking);
+
 		m_AudioSource.Play ();
         StartCoroutine(ScaleTimeout());
     }
