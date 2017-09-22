@@ -8,6 +8,9 @@ public class PlayerJump : MonoBehaviour
     [SerializeField]
     float m_JumpForce;
 
+    [SerializeField]
+    LayerMask m_ActionCollisionLayer;
+
     PlayerMovement m_PlayerMovement;
 
     Rigidbody m_Body;
