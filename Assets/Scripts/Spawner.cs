@@ -9,11 +9,15 @@ public class Spawner : MonoBehaviour {
     public Transform endPoint;
     public Random rnd;
 	public float obstacleSpeed;
-    public float delay;
+    public float BPM;
     public bool IsSpawning;
+
+	private float delay;
 
 	// Use this for initialization
 	void Start () {
+
+		delay = 60 / BPM;
         spawnPoint = GameObject.Find("StartPoint").transform;
         endPoint = GameObject.Find("EndPoint").transform;
         IsSpawning = true;
