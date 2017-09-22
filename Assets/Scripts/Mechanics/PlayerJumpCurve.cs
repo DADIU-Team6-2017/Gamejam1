@@ -41,6 +41,8 @@ public class PlayerJumpCurve : MonoBehaviour
 
         gameObject.layer = LayerMask.NameToLayer(m_ActionCollisionLayer);
 
+        m_PlayerMovement.TriggerAnimation(PlayerMovement.AnimationConditions.jump);
+
 		m_AudioSource.Play ();
         StartCoroutine(JumpFollowCurve());
     }
