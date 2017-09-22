@@ -16,16 +16,23 @@ public class PlayerSlide : MonoBehaviour
     [SerializeField]
     string m_ActionCollisionLayer;
 
+	[SerializeField]
+	AudioClip m_SlideAudioClip;
+
+	AudioSource m_AudioSource;
+
     Vector3 m_DefaultScale;
 
     void OnEnable()
     {
         m_PlayerMovement = GetComponent<PlayerMovement>();
         m_DefaultScale = transform.localScale;
+		m_AudioSource = this.GetComponent<AudioSource> ();
     }
 
     public void Slide()
     {
+		m_AudioSource.clip = m_SlideAudioClip;
         if (m_PlayerMovement.cooldown)
         {
             return;
@@ -37,6 +44,7 @@ public class PlayerSlide : MonoBehaviour
 
         transform.localScale = new Vector3(m_DefaultScale.x, m_ScaleTarget, m_DefaultScale.z);
 
+		m_AudioSource.Play ();
         StartCoroutine(ScaleTimeout());
     }
 
