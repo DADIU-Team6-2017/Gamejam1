@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23236549214530180}
   - component: {fileID: 114649463091475970}
   m_Layer: 0
-  m_Name: JumpOb
+  m_Name: JumpObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
