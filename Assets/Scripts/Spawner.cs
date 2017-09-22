@@ -10,9 +10,12 @@ public class Spawner : MonoBehaviour {
 	public float obstacleSpeed;
     public float bpm = 120;
     public bool isSpawning;
+	public int fourBarSurvive;
+
 	private bool randomOrder = false;
 	private float delay;
 	private int  obstacleCount;
+
 
 	// Use this for initialization
 	void Start () {
@@ -44,12 +47,17 @@ public class Spawner : MonoBehaviour {
 	IEnumerator OrderedInstantiator(float delay){
 		if (ObstacleCollection.Length - 1 >= obstacleCount) {
 			if (ObstacleCollection [obstacleCount] != null) {
-				Instantiate (ObstacleCollection [obstacleCount], spawnPoint);
-				obstacleCount += 1; 
+				GameObject obstacle = Instantiate (ObstacleCollection [obstacleCount], spawnPoint);
+				obstacleCount += 1;
+				print (obstacleCount);
+				if (obstacleCount % fourBarSurvive == 0) {
+					obstacle.GetComponent<ObstacleMove> ().InvokeCheckPlayerPosition();
+				}
 				yield return new WaitForSeconds (delay);
 				if (isSpawning) {
 					StartCoroutine (OrderedInstantiator (delay));
 				}
+
 			} else {
 				obstacleCount += 1; 
 				yield return new WaitForSeconds (delay);
@@ -60,6 +68,7 @@ public class Spawner : MonoBehaviour {
 			obstacleCount = 0; 
 			StartCoroutine (OrderedInstantiator (delay));
 		}
+
 	}
 
 	void SetObstacleSpeed(){
