@@ -39,10 +39,10 @@ GameObject:
   - component: {fileID: 65586462899778882}
   - component: {fileID: 54484053859671704}
   - component: {fileID: 114325654222945372}
-  - component: {fileID: 114735754932423992}
   - component: {fileID: 114360864609693860}
   - component: {fileID: 114841438877802720}
   - component: {fileID: 114216697590486938}
+  - component: {fileID: 82363443455977550}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -70,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841434872493160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -8, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4751063405085406}
@@ -143,6 +143,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82363443455977550
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841434872493160}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 1
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114216697590486938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,8 +254,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   m_JumpTime: 0.1
-  m_ActionCollisionLayer: N
-  m_HollowAudioClip: {fileID: 0}
+  m_ActionCollisionLayer: PhaseLayer
+  m_HollowAudioClip: {fileID: 8300000, guid: 354881730c458a349ae846706045ff17, type: 3}
 --- !u!114 &114325654222945372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -201,23 +281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ScaleTarget: 1
   m_ScaleTime: 0.4
-  m_ActionCollisionLayer: (
-  m_SlideAudioClip: {fileID: 0}
---- !u!114 &114735754932423992
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1841434872493160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3efcefe6df2722b4e908dacf885a74bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 20
-  m_ActionCollisionLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  m_ActionCollisionLayer: DuckLayer
+  m_SlideAudioClip: {fileID: 8300000, guid: ca395c587a896fa43b3ef01a3f8f9dff, type: 3}
 --- !u!114 &114841438877802720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,7 +324,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  m_JumpAudioClip: {fileID: 0}
+  m_JumpAudioClip: {fileID: 8300000, guid: 5bf23aee7f95775449fb21793378e851, type: 3}
   m_JumpTime: 0.4
   m_JumpScale: 4
-  m_ActionCollisionLayer: h
+  m_ActionCollisionLayer: JumpLayer
