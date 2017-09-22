@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour {
 	public float obstacleSpeed;
     public float bpm = 120;
     public bool isSpawning;
-	public bool randomOrder;
+	private bool randomOrder = false;
 	private float delay;
 	private int  obstacleCount;
 
@@ -34,29 +34,39 @@ public class Spawner : MonoBehaviour {
 	IEnumerator RandomInstantiator (float delay)
     {
         Instantiate(ObstacleCollection[Random.Range(0, ObstacleCollection.Length)], spawnPoint);
-
+		obstacleCount += 1; 
         yield return new WaitForSeconds(delay);
 		if (isSpawning) {
 			StartCoroutine (RandomInstantiator (delay));
 		}
-
     }
 
 	IEnumerator OrderedInstantiator(float delay){
 		if (ObstacleCollection.Length - 1 >= obstacleCount) {
-			Instantiate(ObstacleCollection[obstacleCount], spawnPoint);
-			obstacleCount += 1; 
-			yield return new WaitForSeconds(delay);
-			if (isSpawning) {
+			if (ObstacleCollection [obstacleCount] != null) {
+				Instantiate (ObstacleCollection [obstacleCount], spawnPoint);
+				obstacleCount += 1; 
+				yield return new WaitForSeconds (delay);
+				if (isSpawning) {
+					StartCoroutine (OrderedInstantiator (delay));
+				}
+			} else {
+				obstacleCount += 1; 
+				yield return new WaitForSeconds (delay);
 				StartCoroutine (OrderedInstantiator (delay));
-			}
-		}
 
+			}
+		} else {
+			obstacleCount = 0; 
+			StartCoroutine (OrderedInstantiator (delay));
+		}
 	}
 
 	void SetObstacleSpeed(){
 		foreach(GameObject obj in ObstacleCollection){
-			obj.GetComponent<ObstacleMove> ().speed = obstacleSpeed;
+			if (obj != null) {
+				obj.GetComponent<ObstacleMove> ().speed = obstacleSpeed;
+			}
 		}
 	}
 }
