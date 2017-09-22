@@ -174,9 +174,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   m_JumpTime: 0.1
-  m_ActionCollisionLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  m_ActionCollisionLayer: N
+  m_HollowAudioClip: {fileID: 0}
 --- !u!114 &114325654222945372
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,9 +201,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ScaleTarget: 1
   m_ScaleTime: 0.4
-  m_ActionCollisionLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  m_ActionCollisionLayer: (
+  m_SlideAudioClip: {fileID: 0}
 --- !u!114 &114735754932423992
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,8 +259,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  m_JumpAudioClip: {fileID: 0}
   m_JumpTime: 0.4
   m_JumpScale: 4
-  m_ActionCollisionLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  m_ActionCollisionLayer: h

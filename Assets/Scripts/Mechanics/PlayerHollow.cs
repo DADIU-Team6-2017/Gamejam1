@@ -17,6 +17,11 @@ public class PlayerHollow : MonoBehaviour
     [SerializeField]
     string m_ActionCollisionLayer;
 
+	[SerializeField]
+	AudioClip m_HollowAudioClip;
+
+	AudioSource m_AudioSource;
+
     PlayerMovement m_PlayerMovement;
 
     bool m_IsHollow;
@@ -30,10 +35,12 @@ public class PlayerHollow : MonoBehaviour
         m_PlayerMovement = GetComponent<PlayerMovement>();
         m_Body = GetComponent<Rigidbody>();
         m_IsHollow = false;
+		m_AudioSource = GetComponent<AudioSource> ();
     }
 
     public void StartHollow()
     {
+		m_AudioSource.clip = m_HollowAudioClip;
         if (m_PlayerMovement.cooldown)
         {
             return;
@@ -43,6 +50,7 @@ public class PlayerHollow : MonoBehaviour
 
         m_PlayerMovement.cooldown = true;
 
+		m_AudioSource.Play ();
         StartCoroutine(KeepHollow());
     }
 

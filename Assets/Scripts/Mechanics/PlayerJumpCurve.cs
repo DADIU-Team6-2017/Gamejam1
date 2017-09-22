@@ -8,6 +8,9 @@ public class PlayerJumpCurve : MonoBehaviour
     [SerializeField]
     AnimationCurve m_JumpTrajectory;
 
+	[SerializeField]
+	AudioClip m_JumpAudioClip;
+
     [SerializeField]
     float m_JumpTime = 1f;
 
@@ -18,14 +21,17 @@ public class PlayerJumpCurve : MonoBehaviour
     string m_ActionCollisionLayer;
 
     PlayerMovement m_PlayerMovement;
+	AudioSource m_AudioSource;
 
     public void OnEnable()
     {
         m_PlayerMovement = GetComponent<PlayerMovement>();
+		m_AudioSource = GetComponent<AudioSource> ();
     }
 
     public void Jump()
     {
+		m_AudioSource.clip = m_JumpAudioClip;
         if (m_PlayerMovement.cooldown)
         {
             return;
@@ -35,6 +41,7 @@ public class PlayerJumpCurve : MonoBehaviour
 
         gameObject.layer = LayerMask.NameToLayer(m_ActionCollisionLayer);
 
+		m_AudioSource.Play ();
         StartCoroutine(JumpFollowCurve());
     }
 
