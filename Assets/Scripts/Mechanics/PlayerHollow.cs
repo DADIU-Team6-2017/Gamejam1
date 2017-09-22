@@ -50,6 +50,8 @@ public class PlayerHollow : MonoBehaviour
 
         m_PlayerMovement.cooldown = true;
 
+        m_PlayerMovement.SetAnimationState(PlayerMovement.AnimationConditions.hollow, true);
+
 		m_AudioSource.Play ();
         StartCoroutine(KeepHollow());
     }
@@ -58,6 +60,7 @@ public class PlayerHollow : MonoBehaviour
     {
         m_IsJumping = false;
         m_IsHollow = false;
+        m_PlayerMovement.SetAnimationState(PlayerMovement.AnimationConditions.hollow, false);
     }
 
     IEnumerator KeepHollow()
